@@ -6,6 +6,6 @@ namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
     {
         public string CommandText { get; set; }
         public ScenarioMap Map { get; set; }
-        public List<ScenarioCommand> Commands { get; set; }
+        public Dictionary<string, ScenarioCommand> Commands { get; set; }
     }
 }
