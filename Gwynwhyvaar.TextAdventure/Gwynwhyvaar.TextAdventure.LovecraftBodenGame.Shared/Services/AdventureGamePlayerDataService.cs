@@ -1,21 +1,34 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Extensions;
 using Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Services
 {
     public class AdventureGamePlayerDataService : IAdventureGamePlayerDataService
     {
-        private readonly FileManager<AdventureGamePlayerData> _fileManager =
-            FileManager<AdventureGamePlayerData>.Instance;
+        private readonly FileManager<FileSystemEntity<AdventureGamePlayerData>> _fileManager =
+            FileManager<FileSystemEntity<AdventureGamePlayerData>>.Instance;
 
-        public Task SaveAsync(AdventureGamePlayerData adventureGamePlayerData, string fileName)
+        public async Task SaveAsync(AdventureGamePlayerData adventureGamePlayerData, string fileName)
         {
-            return _fileManager.SaveAsync(adventureGamePlayerData, fileName);
+            var data = adventureGamePlayerData.AdventureGamePlayerDataToFileSystemEntity();
+            await _fileManager.SaveAsync(data, fileName);
         }
 
-        public Task<AdventureGamePlayerData> LoadAsync(string fileName)
+        public async Task<AdventureGamePlayerData> LoadAsync(string fileName)
         {
-            return _fileManager.LoadAsync(fileName);
+            var data = await _fileManager.LoadAsync(fileName);
+            if (data != null) return data.Data;
+            return null;
+        }
+
+        public async Task<List<AdventureGamePlayer>> LoadAllAsync(string fileName)
+        {
+            var data = await LoadAsync(fileName);
+            if (data != null && data.AdventureGamePlayers != null) return data.AdventureGamePlayers.Values.ToList();
+            return null;
         }
     }
 }
