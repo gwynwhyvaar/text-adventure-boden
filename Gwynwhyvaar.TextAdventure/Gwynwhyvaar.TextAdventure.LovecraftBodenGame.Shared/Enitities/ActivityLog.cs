@@ -1,6 +1,6 @@
 ﻿namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    public class ActivityLog: AdventureGameBase
+    public class ActivityLog : AdventureGameBase
     {
         public string AdventureGameGuid { get; set; }
         public string ScenarioGuid { get; set; }
