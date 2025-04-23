@@ -2,6 +2,7 @@
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
+    [Serializable]
     public class ScenarioNodeBase
     {
         public string AddressGuid { get; set; } = Guid.NewGuid().ToString("X");

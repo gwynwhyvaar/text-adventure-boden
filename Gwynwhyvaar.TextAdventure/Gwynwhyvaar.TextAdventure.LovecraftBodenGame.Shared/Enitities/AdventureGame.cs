@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
+    [Serializable]
     public class AdventureGame : AdventureGameBase
     {
         public AdventureGamePlayer CurrentPlayer { get; set; }

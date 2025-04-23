@@ -4,9 +4,12 @@ using Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Services
 {
-    public class FileManager<TEntity> : IFileManagerService<TEntity>
+    internal class FileManager<TEntity> : IFileManagerService<TEntity>
     {
-        public async Task<TEntity> LoadAsync(TEntity file, string fileName)
+        private static FileManager<TEntity> _instance;
+        public static FileManager<TEntity> Instance => _instance ??= new FileManager<TEntity>();
+
+        public async Task<TEntity> LoadAsync(string fileName)
         {
             var content = await File.ReadAllTextAsync(fileName);
             if (content != null) return System.Text.Json.JsonSerializer.Deserialize<TEntity>(content);
@@ -21,7 +24,7 @@ namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Services
 
         public async Task<TEntity> UpdateAsync(TEntity file, string fileName)
         {
-            var data = await LoadAsync(file, fileName);
+            var data = await LoadAsync(fileName);
             data = file;
             await SaveAsync(data, fileName);
             return file;

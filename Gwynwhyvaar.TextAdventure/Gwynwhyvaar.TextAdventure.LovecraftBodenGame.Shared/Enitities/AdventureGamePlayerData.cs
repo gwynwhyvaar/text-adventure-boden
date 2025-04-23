@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
     [Serializable]
-    public class AdventureGameActivity : AdventureGameBase
+    public class AdventureGamePlayerData
     {
-        public Dictionary<string, ActivityLog> ActivityLogs { get; set; }
+        public Dictionary<string, AdventureGamePlayer> AdventureGamePlayers { get; set; }
     }
 }

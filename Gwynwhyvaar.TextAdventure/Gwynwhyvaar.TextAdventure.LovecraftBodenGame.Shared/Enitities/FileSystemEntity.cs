@@ -2,6 +2,7 @@
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
+    [Serializable]
     internal class FileSystemEntity<T>
     {
         public Guid FileSystemGuid { get; set; }=Guid.NewGuid();

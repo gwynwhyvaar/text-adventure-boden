@@ -1,5 +1,8 @@
-﻿namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
+﻿using System;
+
+namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
+    [Serializable]
     public class ScenarioCommand : ScenarioNodeBase
     {
         public string CommandText { get; set; }

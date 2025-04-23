@@ -2,6 +2,7 @@
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
+    [Serializable]
     public class AdventureGameBase
     {
         public string Name { get; set; }

@@ -1,5 +1,8 @@
-﻿namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
+﻿using System;
+
+namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
+    [Serializable]
     public class AdventureGameSetting : AdventureGameBase
     {
         public int SoundVolume { get; set; }
