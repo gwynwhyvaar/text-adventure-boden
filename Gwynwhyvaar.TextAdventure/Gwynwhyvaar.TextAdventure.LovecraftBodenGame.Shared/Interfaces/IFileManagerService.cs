@@ -1,11 +1,9 @@
-﻿using System.Threading.Tasks;
-
-namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces
+﻿namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces
 {
-    internal interface IFileManagerService<TEntity>
+    public interface IFileManagerService<TEntity>
     {
-        Task<TEntity> LoadAsync(string fileName);
-        Task SaveAsync(TEntity file, string fileName);
-        Task<TEntity> UpdateAsync(TEntity file, string fileName);
+        TEntity Load(string fileName);
+        void Save(TEntity file, string fileName);
+        TEntity Update(TEntity file, string fileName);
     }
 }

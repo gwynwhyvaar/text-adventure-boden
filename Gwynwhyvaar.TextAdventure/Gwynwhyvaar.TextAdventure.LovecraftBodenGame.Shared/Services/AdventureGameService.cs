@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Extensions;
+﻿using Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Extensions;
 using Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Services
@@ -9,25 +8,25 @@ namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Services
         private readonly FileManager<FileSystemEntity<AdventureGame>> _fileManager =
             FileManager<FileSystemEntity<AdventureGame>>.Instance;
 
-        public async Task SaveAsync(AdventureGame adventureGame, string fileName)
+        public void Save(AdventureGame adventureGame, string fileName)
         {
             var file = adventureGame.AdventureGameToFileSystemEntity();
-            await _fileManager.SaveAsync(file, fileName);
+            _fileManager.Save(file, fileName);
         }
 
-        public async Task<AdventureGame> LoadAsync(string fileName)
+        public AdventureGame Load(string fileName)
         {
-            var data = await _fileManager.LoadAsync(fileName);
+            var data = _fileManager.Load(fileName);
             if (data != null) return data.Data;
             return null;
         }
 
-        public async Task<AdventureGame> UpdateAsync(AdventureGame adventureGame, string fileName)
+        public AdventureGame Update(AdventureGame adventureGame, string fileName)
         {
-            var input = await _fileManager.LoadAsync(fileName);
+            var input = _fileManager.Load(fileName);
             var data = adventureGame.CopyAdventureGameToFileSystemEntity(input);
-            var result = await _fileManager.UpdateAsync(data, fileName);
-            if (result!= null) return result.Data;
+            var result = _fileManager.Update(data, fileName);
+            if (result != null) return result.Data;
             return null;
         }
     }

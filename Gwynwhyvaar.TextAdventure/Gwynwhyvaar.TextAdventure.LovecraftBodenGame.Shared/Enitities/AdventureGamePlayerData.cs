@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class AdventureGamePlayerData
     {
-        public Dictionary<string, AdventureGamePlayer> AdventureGamePlayers { get; set; }
+        [DataMember] public Dictionary<string, AdventureGamePlayer> AdventureGamePlayers { get; set; }
     }
 }

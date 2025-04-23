@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
-    internal class FileSystemEntity<T>
+    [DataContract]
+    public class FileSystemEntity<T>
     {
-        public Guid FileSystemGuid { get; set; }=Guid.NewGuid();
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public string Name { get; set; }
-        public T Data { get; set; }
+        [DataMember] public Guid FileSystemGuid { get; set; } = Guid.NewGuid();
+        [DataMember] public DateTime CreatedDate { get; set; } = DateTime.Now;
+        [DataMember] public string Name { get; set; }
+        [DataMember] public T Data { get; set; }
     }
 }

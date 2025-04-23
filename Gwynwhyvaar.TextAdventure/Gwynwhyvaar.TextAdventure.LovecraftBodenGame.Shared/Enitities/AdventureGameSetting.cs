@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class AdventureGameSetting : AdventureGameBase
     {
-        public int SoundVolume { get; set; }
-        public bool ShowLogs { get; set; }
+        [DataMember] public int SoundVolume { get; set; }
+        [DataMember] public bool ShowLogs { get; set; }
     }
 }

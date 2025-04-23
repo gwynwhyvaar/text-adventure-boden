@@ -11,22 +11,22 @@ namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Services
         private readonly FileManager<FileSystemEntity<AdventureGamePlayerData>> _fileManager =
             FileManager<FileSystemEntity<AdventureGamePlayerData>>.Instance;
 
-        public async Task SaveAsync(AdventureGamePlayerData adventureGamePlayerData, string fileName)
+        public void Save(AdventureGamePlayerData adventureGamePlayerData, string fileName)
         {
             var data = adventureGamePlayerData.AdventureGamePlayerDataToFileSystemEntity();
-            await _fileManager.SaveAsync(data, fileName);
+            _fileManager.Save(data, fileName);
         }
 
-        public async Task<AdventureGamePlayerData> LoadAsync(string fileName)
+        public AdventureGamePlayerData Load(string fileName)
         {
-            var data = await _fileManager.LoadAsync(fileName);
+            var data = _fileManager.Load(fileName);
             if (data != null) return data.Data;
             return null;
         }
 
-        public async Task<List<AdventureGamePlayer>> LoadAllAsync(string fileName)
+        public List<AdventureGamePlayer> LoadAll(string fileName)
         {
-            var data = await LoadAsync(fileName);
+            var data = Load(fileName);
             if (data != null && data.AdventureGamePlayers != null) return data.AdventureGamePlayers.Values.ToList();
             return null;
         }

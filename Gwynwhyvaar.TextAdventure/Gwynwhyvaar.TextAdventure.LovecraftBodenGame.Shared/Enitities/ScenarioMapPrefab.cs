@@ -1,8 +1,8 @@
-﻿using System;
+﻿using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class ScenarioMapPrefab : ScenarioNodeBase
     {
     }

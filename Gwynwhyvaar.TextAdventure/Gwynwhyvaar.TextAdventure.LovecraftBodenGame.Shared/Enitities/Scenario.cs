@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class Scenario : ScenarioNodeBase
     {
-        public string CommandText { get; set; }
-        public ScenarioMap Map { get; set; }
-        public Dictionary<string, ScenarioCommand> Commands { get; set; }
+        [DataMember] public string CommandText { get; set; }
+        [DataMember] public ScenarioMap Map { get; set; }
+        [DataMember] public Dictionary<string, ScenarioCommand> Commands { get; set; }
     }
 }

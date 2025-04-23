@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class AdventureGameBase
     {
-        public string Name { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public string AdventureGuid { get; set; } = Guid.NewGuid().ToString("X");
+        [DataMember] public string Name { get; set; }
+        [DataMember] public DateTime CreatedDate { get; set; } = DateTime.Now;
+        [DataMember] public string AdventureGuid { get; set; } = Guid.NewGuid().ToString("X");
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
-    public class AdventureGamePlayer: AdventureGameBase
+    [DataContract]
+    public class AdventureGamePlayer : AdventureGameBase
     {
-        public string PortraitImagePrefab { get; set; }
-        public string CharacterBioGraphy { get; set; }
-        public string FullProfileImagePrefab { get; set; }
+        [DataMember] public string PortraitImagePrefab { get; set; }
+        [DataMember] public string CharacterBioGraphy { get; set; }
+        [DataMember] public string FullProfileImagePrefab { get; set; }
     }
 }

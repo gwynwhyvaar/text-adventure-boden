@@ -1,11 +1,9 @@
-﻿using System.Threading.Tasks;
-
-namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces
+﻿namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.Interfaces
 {
     public interface IAdventureGameService
     {
-        Task SaveAsync(AdventureGame adventureGame, string fileName);
-        Task<AdventureGame> LoadAsync(string fileName);
-        Task<AdventureGame> UpdateAsync(AdventureGame adventureGame, string fileName);
+        void Save(AdventureGame adventureGame, string fileName);
+        AdventureGame Load(string fileName);
+        AdventureGame Update(AdventureGame adventureGame, string fileName);
     }
 }

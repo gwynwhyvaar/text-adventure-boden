@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class AdventureGame : AdventureGameBase
     {
-        public AdventureGamePlayer CurrentPlayer { get; set; }
-        public AdventureGameSetting Setting { get; set; }
-        public Dictionary<string, Scenario> Scenarios { get; set; }
-        public Scenario LastScenario { get; set; }
+        [DataMember] public AdventureGamePlayer CurrentPlayer { get; set; }
+        [DataMember] public AdventureGameSetting Setting { get; set; }
+        [DataMember] public Dictionary<string, Scenario> Scenarios { get; set; }
+        [DataMember] public Scenario LastScenario { get; set; }
     }
 }

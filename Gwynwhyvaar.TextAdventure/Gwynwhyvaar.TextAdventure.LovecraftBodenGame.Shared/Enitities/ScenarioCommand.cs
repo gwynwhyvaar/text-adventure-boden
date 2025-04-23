@@ -1,13 +1,13 @@
-﻿using System;
+﻿using System.Runtime.Serialization;
 
 namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
 {
-    [Serializable]
+    [DataContract]
     public class ScenarioCommand : ScenarioNodeBase
     {
-        public string CommandText { get; set; }
-        public string ScenarioGuid { get; set; }
-        public string NavigationHotKey { get; set; }
-        public int CommandOrder { get; set; }
+        [DataMember] public string CommandText { get; set; }
+        [DataMember] public string ScenarioGuid { get; set; }
+        [DataMember] public string NavigationHotKey { get; set; }
+        [DataMember] public int CommandOrder { get; set; }
     }
 }
