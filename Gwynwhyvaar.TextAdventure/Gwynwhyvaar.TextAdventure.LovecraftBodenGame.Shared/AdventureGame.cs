@@ -6,6 +6,7 @@ namespace Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared
     {
         public AdventureGamePlayer CurrentPlayer { get; set; }
         public AdventureGameSetting Setting { get; set; }
-        public List<Scenario> Scenarios { get; set; }
+        public Dictionary<string, Scenario> Scenarios { get; set; }
+        public Scenario LastScenario { get; set; }
     }
 }
