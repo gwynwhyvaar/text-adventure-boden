@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared\Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.csproj" />
+      <ProjectReference Include="..\Gwynwhyvaar.TextAdventure.UI.Shared\Gwynwhyvaar.TextAdventure.UI.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Demo.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
+</Project>

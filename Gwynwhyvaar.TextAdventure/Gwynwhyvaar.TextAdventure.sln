@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gwynwhyvaar.TextAdventure.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared", "Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared\Gwynwhyvaar.TextAdventure.LovecraftBodenGame.Shared.csproj", "{04B8538A-85C9-47C0-A746-D00D2346431D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gwynwhyvaar.TextAdventure.UI", "Gwynwhyvaar.TextAdventure.UI\Gwynwhyvaar.TextAdventure.UI.csproj", "{F17CA55B-3DDD-45EB-A5E3-CA7704659DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gwynwhyvaar.TextAdventure.UI.Shared", "Gwynwhyvaar.TextAdventure.UI.Shared\Gwynwhyvaar.TextAdventure.UI.Shared.csproj", "{F0319119-D8DE-4E1B-A46A-77D5B84574C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{04B8538A-85C9-47C0-A746-D00D2346431D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04B8538A-85C9-47C0-A746-D00D2346431D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04B8538A-85C9-47C0-A746-D00D2346431D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17CA55B-3DDD-45EB-A5E3-CA7704659DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17CA55B-3DDD-45EB-A5E3-CA7704659DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17CA55B-3DDD-45EB-A5E3-CA7704659DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17CA55B-3DDD-45EB-A5E3-CA7704659DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0319119-D8DE-4E1B-A46A-77D5B84574C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0319119-D8DE-4E1B-A46A-77D5B84574C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0319119-D8DE-4E1B-A46A-77D5B84574C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0319119-D8DE-4E1B-A46A-77D5B84574C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
